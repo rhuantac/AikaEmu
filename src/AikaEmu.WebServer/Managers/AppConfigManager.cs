@@ -17,7 +17,7 @@ namespace AikaEmu.WebServer.Managers
 
         public void Init()
         {
-            var filePath = Directory.GetCurrentDirectory() + "\\Config.json";
+            var filePath = Path.Combine(Directory.GetCurrentDirectory() , "Config.json");
 
             if (File.Exists(filePath))
             {

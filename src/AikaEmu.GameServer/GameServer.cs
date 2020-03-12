@@ -71,7 +71,7 @@ namespace AikaEmu.GameServer
 
         private static void SetupLogManager()
         {
-            var filePath = Directory.GetCurrentDirectory() + "\\NLog.config";
+            var filePath = Path.Combine(Directory.GetCurrentDirectory() , "NLog.config");
             if (File.Exists(filePath))
             {
                 LogManager.Configuration = new XmlLoggingConfiguration(filePath, false);

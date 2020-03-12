@@ -32,7 +32,7 @@ namespace AikaEmu.GameServer.Managers
 
         protected DataManager()
         {
-            _curDir = Directory.GetCurrentDirectory() + "\\";
+            _curDir = Directory.GetCurrentDirectory();
         }
 
         public void Init()
@@ -95,7 +95,7 @@ namespace AikaEmu.GameServer.Managers
 
         private string GetPath(string dir, bool json = true)
         {
-            return _curDir + "Data\\" + dir + (json ? ".json" : "");
+            return Path.Combine(_curDir,"Data",dir) + (json ? ".json" : "");
         }
     }
 }

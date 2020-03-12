@@ -17,7 +17,7 @@ namespace AikaEmu.GameServer.Managers.Configuration
 
 		public void Init()
 		{
-			var filePath = Directory.GetCurrentDirectory() + "\\Config.json";
+			var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Config.json");
 
 			if (File.Exists(filePath))
 			{
