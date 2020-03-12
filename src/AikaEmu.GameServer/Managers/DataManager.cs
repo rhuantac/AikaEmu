@@ -37,25 +37,25 @@ namespace AikaEmu.GameServer.Managers
 
         public void Init()
         {
-            CharacterData = new CharacterData(GetPath("Character\\CharacterConfig"));
+            CharacterData = new CharacterData(GetPath(Path.Combine("Character","CharacterConfig")));
             _log.Info("Loaded CharacterConfig...");
 
-            ItemsData = new ItemsData(GetPath("Game\\ItemList.bin"));
+            ItemsData = new ItemsData(GetPath(Path.Combine("Game", "ItemList.bin")));
             _log.Info("Loaded {0} items.", ItemsData.Count);
 
-            MnData = new MnData(GetPath("Game\\MN.bin"));
+            MnData = new MnData(GetPath(Path.Combine("Game","MN.bin")));
             _log.Info("Loaded {0} monster names.", MnData.Count);
 
-            NpcData = new NpcData(GetPath("Npcs\\", false));
+            NpcData = new NpcData(GetPath("Npcs", false));
             _log.Info("Loaded {0} npcs.", NpcData.Count);
 
-            MobData = new MobData(GetPath("Mobs\\", false));
+            MobData = new MobData(GetPath("Mobs", false));
             _log.Info("Loaded {0} mobs.", MobData.Count);
 
-            QuestData = new QuestData(GetPath("Game\\Quest.bin"));
+            QuestData = new QuestData(GetPath(Path.Combine("Game", "Quest.bin"));
             _log.Info("Loaded {0} quests.", QuestData.Count);
 
-            SkillData = new SkillDataData(GetPath("Game\\SkillData.bin"));
+            SkillData = new SkillDataData(GetPath(Path.Combine("Game","SkillData.bin")));
             _log.Info("Loaded {0} skills.", SkillData.Count);
 
             using (var connection = DatabaseManager.Instance.GetConnection())

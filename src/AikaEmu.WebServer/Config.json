@@ -3,14 +3,14 @@
     "Host": "localhost",
     "Port": 3306,
     "User": "root",
-    "Pass": "",
+    "Pass": "admin",
     "Database": "aikaemu_auth"
   },
   "DatabaseGame": {
     "Host": "localhost",
     "Port": 3306,
     "User": "root",
-    "Pass": "",
+    "Pass": "admin",
     "Database": "aikaemu_game"
   }
 }
