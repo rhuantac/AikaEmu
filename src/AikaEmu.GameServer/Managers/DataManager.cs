@@ -52,7 +52,7 @@ namespace AikaEmu.GameServer.Managers
             MobData = new MobData(GetPath("Mobs", false));
             _log.Info("Loaded {0} mobs.", MobData.Count);
 
-            QuestData = new QuestData(GetPath(Path.Combine("Game", "Quest.bin"));
+            QuestData = new QuestData(GetPath(Path.Combine("Game", "Quest.bin")));
             _log.Info("Loaded {0} quests.", QuestData.Count);
 
             SkillData = new SkillDataData(GetPath(Path.Combine("Game","SkillData.bin")));

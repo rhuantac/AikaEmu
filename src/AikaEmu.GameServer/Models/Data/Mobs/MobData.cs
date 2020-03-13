@@ -14,7 +14,7 @@ namespace AikaEmu.GameServer.Models.Data.Mobs
         {
             try
             {
-                JsonUtil.DeserializeFile(path + "MobPos.bin.json", out List<MobPosJson> mobPosData);
+                JsonUtil.DeserializeFile(Path.Combine(path ,"MobPos.bin.json"), out List<MobPosJson> mobPosData);
 
                 foreach (var dir in Directory.GetDirectories(path))
                 {
