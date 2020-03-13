@@ -81,11 +81,15 @@ namespace AikaEmu.WebServer.Managers
                         }
 
                     }
-                    var parameters = new Dictionary<String, Object>
+                    if (createNewAccount)
+                    {
+                        var parameters = new Dictionary<String, Object>
                             {
                                 {"user", user }, {"pass", pass}
                             };
-                    MySqlCommand(SqlCommandType.Insert, "accounts", parameters, connection);
+                        MySqlCommand(SqlCommandType.Insert, "accounts", parameters, connection);
+                    }
+                    
                 }
             }
 
