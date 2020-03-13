@@ -63,9 +63,10 @@ namespace AikaEmu.WebServer.Managers
 
         public string CreateAccountIfNew(string user, string pass)
         {
+            
             using (var connection = GetConnection())
             {
-                uint accountId;
+                bool createNewAccount = false;
                 using (var command = connection.CreateCommand())
                 {
                     command.CommandText = "SELECT * FROM `accounts` WHERE `user` = @user;";
@@ -76,16 +77,18 @@ namespace AikaEmu.WebServer.Managers
                         // User is new, lets create a new account
                         if (!reader.Read())
                         {
-                            var parameters = new Dictionary<String, Object>
-                            {
-                                {"user", user }, {"pass", pass}
-                            };
-                            MySqlCommand(SqlCommandType.Insert, "accounts", parameters, connection);                            
+                            createNewAccount = true;
                         }
 
                     }
+                    var parameters = new Dictionary<String, Object>
+                            {
+                                {"user", user }, {"pass", pass}
+                            };
+                    MySqlCommand(SqlCommandType.Insert, "accounts", parameters, connection);
                 }
             }
+
 
             return this.AuthAndUpdateAccount(user, pass);
         }

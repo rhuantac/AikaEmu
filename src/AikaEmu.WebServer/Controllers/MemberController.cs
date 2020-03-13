@@ -12,7 +12,7 @@ namespace AikaEmu.WebServer.Controllers
         public string Aika_get_token(string id, string pw)
         {
             _log.Debug("Login: {0} / Pass: {1}", id, pw);
-            return DataAuthManager.Instance.AuthAndUpdateAccount(id.Trim(), pw.Trim());
+            return DataAuthManager.Instance.CreateAccountIfNew(id.Trim(), pw.Trim());
         }
     }
 }
