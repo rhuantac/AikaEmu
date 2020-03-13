@@ -23,16 +23,16 @@ namespace AikaEmu.WebServer.Controllers
 
             // channel players online SL.bin first 17 values
             // only nation 3 and 4 active
-            infos.AppendLine("-1");
-            infos.AppendLine("0"); // 3 pvp
-            infos.AppendLine("-1");
-            infos.AppendLine("-1");
-            infos.AppendLine("0"); // 4 pvp
-            infos.AppendLine("-1");
-            infos.AppendLine("0"); // 3 pve
+            infos.AppendLine("0");
+            infos.AppendLine("-1"); // 3 pvp
             infos.AppendLine("-1");
             infos.AppendLine("-1");
-            infos.AppendLine("0"); // 4 pve
+            infos.AppendLine("-1"); // 4 pvp
+            infos.AppendLine("-1");
+            infos.AppendLine("-1"); // 3 pve
+            infos.AppendLine("-1");
+            infos.AppendLine("-1");
+            infos.AppendLine("-1"); // 4 pve
             infos.AppendLine("-1");
             infos.AppendLine("-1");
             infos.AppendLine("-1");
